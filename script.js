@@ -1,35 +1,28 @@
 'use strict';
 
-const Part = 'P.16 - Функции, стрелочные ф-ции (ES6)';
+const Part = 'P.17 - Методы и свойства строк и чисел';
 
+// const str = 'teSt';
 
-// let num = 20;
+// console.log(str.toUpperCase());
+// console.log(str.toLowerCase());
+// console.log(str);
 
-// function showFirstMessege(text) {
-//     console.log(text);
-//     let num = 10;
-// }
+// const fruit = 'Some fruit';
 
-// showFirstMessege('Hello World!');
-// console.log(num);
+// console.log(fruit.indexOf('fruit'));
 
+const logg = 'Hello world';
 
-// function calc(a, b) {
-//     return console.log(a + b);
-// }
+// console.log(logg.slice(6, 11));
 
-// calc(4, 2);
+// console.log(logg.substring(6, 11));
 
+console.log(logg.substr(6, 2));
 
-const logger = function() {
-    console.log('Hello');
-};
+const num = 12.2;
+console.log(Math.round(num));
 
-logger();
-
-
-const calc = (a, b) => {
-    return console.log(a + b);
-};
-
-calc(3, 4);
+const test = '12.2px';
+// console.log(parseInt(test));
+console.log(parseFloat(test));
