@@ -12,7 +12,6 @@ const personalMovieDB = {
     genres: [],
     privat: false
 
-    
 };
 
 
