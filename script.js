@@ -1,24 +1,56 @@
 'use strict';
 
-const Part = '25. Отлавливаем ошибки в своем коде при помощи консоли разработчика. Breakpoints';
+const Part = '26. Динамическая типизация в JS';
 
-function hello() {
-    console.log('Hello World');
+// To String
+
+// 1)
+console.log(typeof(String(null)));
+console.log(typeof(String(4)));
+
+// 2)
+console.log(typeof(5 + ''));
+
+const num = 5;
+
+console.log('https://vk.com/catalog/' + num);
+
+const fontSize = 26 + 'px';
+
+// To Number
+
+// 1)
+console.log(typeof(Number('4')));
+
+// 2)
+console.log(typeof(+'5'));
+
+// 3)
+console.log(typeof(parseInt('15px', 10)));
+
+
+let answ = +prompt('Hello', '');
+
+// To boolean
+
+// 0, '', null, undefined, NaN;
+
+// 1)
+
+let switcher = null;
+
+if (switcher) {
+    console.log('Working...');
 }
 
-hello();
+switcher = 1;
 
-function hi() {
-    console.log('Say Hi');
+if (switcher) {
+    console.log('Working...');
 }
 
-hi();
+// 2)
+console.log(typeof(Boolean('4')));
 
-const arr = [1, 14, 4, 30, 54],
-    sorted = arr.sort(compareNum);
-
-function compareNum(a, b) {
-    return a - b;
-}
-
-console.log(arr);
+// 3)
+console.log(typeof(!!'4'));
