@@ -1,60 +1,37 @@
 'use strict';
 
-const Part = '30. Практика. Задание на отработку действий со страницей';
+const Part = 'P31. События и их обработчики';
+
+const btns = document.querySelectorAll('button'),
+      overlay = document.querySelector('.overlay');
 
 
-const box = document.getElementById('box'),
-      btns = document.getElementsByTagName('button'),
-      circles = document.getElementsByClassName('circle'),
-      wrapper = document.querySelector('.wrapper'),
-      hearts = wrapper.querySelectorAll('.heart'),
-      oneHeart = wrapper.querySelector('.heart');
+// btn.onclick = function() {
+//     alert('Click');
+// };
 
+// let i = 0;
+const deleteElement = (e) => {
+    console.log(e.target);
+    console.log(e.type);
+    // i++;
+    // if (i == 1) {
+    //     btn.removeEventListener('click', deleteElement);
+    // }
+};
 
-// box.style.backgroundColor = 'blue';
-// box.style.width = '500px';
+// btn.addEventListener('click', deleteElement);
+// overlay.addEventListener('click', deleteElement);
 
-
-box.style.cssText = `background-color: blue; width: 500px;`;
-
-btns[1].style.borderRadius = '100%';
-circles[0].style.backgroundColor = 'red';
-
-
-// for (let i = 0; i < hearts.length; i++) {
-//     hearts[i].style.backgroundColor = 'green';
-// }
-
-
-hearts.forEach(item => {
-    item.style.backgroundColor = 'green';
+btns.forEach(btn => {
+    btn.addEventListener('click', deleteElement, {once: true});
 });
 
-const div = document.createElement('div');
-// const text = document.createTextNode('Тут был я');
+const link = document.querySelector('a');
 
-div.classList.add('black');
+link.addEventListener('click', function(event) {
+    event.preventDefault();
 
-wrapper.append(div);
-// wrapper.appendChild(div);
+    console.log(event.target);
+});
 
-// wrapper.prepend(div);
-
-// hearts[0].before(div);
-// hearts[0].after(div);
-
-// wrapper.insertBefore(div, hearts[1]);
-
-// circles[0].remove();
-// wrapper.removeChild(hearts[1]);
-
-
-// hearts[1].replaceWith(circles[1]);
-// wrapper.replaceChild(circles[0], hearts[0]);
-
-div.innerHTML = '<h1>Hello World</h1>';
-div.style.width = '200px';
-
-// div.textContent = 'Hello';
-
-div.insertAdjacentHTML('afterend', '<h2>Hello</h2>');
